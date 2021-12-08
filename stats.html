@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mini Logiciel Comptable</title>
+</head>
+<body>
+    <header>
+        <h1><marquee behavior="scroll" direction="left">Bienvenue à notre gestionnaire comptable</marquee></h1>
+    </header>
+    <main>
+        <div id="droite">
+            <nav>
+                <ul>
+                    <a href="index.html"><li>Account</li></a>
+                    <a href="log.html"><li>Log</li></a>
+                    <a href="stats.html"><li>Stats</li></a>
+                </ul>
+            </nav>
+            <h3>Elhadji Samba sY</h3>
+            <h3>Mouhamadou Mansour</h3>
+        </div>
+        <div id="statistique">
+            <form action="" method="post">
+                <fieldset>
+                    <legend>Transaction</legend>
+                    <label for="dateTransaction">Date Transaction</label> <input type="date" name="dateTransaction" id="" placeholder="Transaction Date">
+                    <label for="dateTransaction">Date Transaction</label> <input type="date" name="dateTransaction" id="" placeholder="Transaction Date">
+                    <label for="Account">Account</label> <input type="checkbox" name="combox" id="" placeholder="ComboBox"><br><br>
+                    <button type="submit">Ajouter</button>
+                </fieldset>
+            </form><br><br>
+            
+            <table>
+                <caption><span>"coder un jour, coder toujours"</span></caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Transaction Date</th>
+                        <th scope="col">Account Code(Debit)</th>
+                        <th scope="col">Account Code(Credit)</th>
+                        <th scope="col">Transaction Object</th>
+                        <th scope="col">Debit</th>
+                        <th scope="col">Credit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01/11/2021</td>
+                        <td>410000</td>
+                        <td></td>
+                        <td>Vente</td>
+                        <td>1500</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>01/11/2021</td>
+                        <td></td>
+                        <td>70700</td>
+                        <td>Vente</td>
+                        <td></td>
+                        <td>1500</td>
+                    </tr>
+                    <tr>
+                        <td>03/11/2021</td>
+                        <td></td>
+                        <td>410000</td>
+                        <td>Réglement Client</td>
+                        <td></td>
+                        <td>700</td>
+                    </tr>
+                    <tr>
+                        <td>03/11/2021</td>
+                        <td>530000</td>
+                        <td></td>
+                        <td>Réglement Client</td>
+                        <td>700</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+        </table>
+        </div>
+    </main>
+</body>
+</html>

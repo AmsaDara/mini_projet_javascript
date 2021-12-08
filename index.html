@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mini Logiciel Comptable</title>
+</head>
+<body>
+    <header>
+        <h1><marquee behavior="scroll" direction="left">Bienvenue à notre gestionnaire comptable</marquee></h1>
+    </header>
+    <main>
+        <div id="droite">
+            <nav>
+                <ul>
+                    <a href="index.html"><li>Account</li></a>
+                    <a href="log.html"><li>Log</li></a>
+                    <a href="stats.html"><li>Stats</li></a>
+                </ul>
+            </nav>
+            <h3>Elhadji Samba sY</h3>
+            <h3>Mouhamadou Mansour</h3>
+        </div>
+        <div id="tableau">
+            <header>Systéme De Compte</header> <br>
+            <div id="form">
+                <input type="text" name="" id="prNom" placeholder="Prenom">
+                <input type="text" name="" id="snNom" placeholder="Nom">
+                <input type="text" name="" id="snAdres" placeholder="Adresse">
+                <input type="text" name="" id="snEntrepise" placeholder="Entreprise">
+                <button type="submit" id="additem">Ajouter</button>
+            </div> <br><br>
+            
+            <table>
+                    <caption><span>"coder un jour, coder toujours"</span></caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">N°</th>
+                            <th scope="col">Prenom</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Adresse</th>
+                            <th scope="col">Entreprise</th>
+                            <th scope="col">Supprimé</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- <tr>
+                            <th scope="row">0</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><button type="submit" id="deleted"></button></td>
+                        </tr> -->
+                       
+                    </tbody>
+            </table>
+        </div>
+    </main>
+    
+    <script src="data.js"></script>
+    
+</body>
+</html>

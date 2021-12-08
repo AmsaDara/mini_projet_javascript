@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mini Logiciel Comptable</title>
+</head>
+<body>
+    <header>
+        <h1><marquee behavior="scroll" direction="left">Bienvenue à notre gestionnaire comptable</marquee></h1>
+    </header>
+    <main>
+        <div id="droite">
+            <nav>
+                <ul>
+                    <a href="index.html"><li>Account</li></a>
+                    <a href="log.html"><li>Log</li></a>
+                    <a href="stats.html"><li>Stats</li></a>
+                </ul>
+            </nav>
+            <h3>Elhadji Samba sY</h3>
+            <h3>Mouhamadou Mansour</h3>
+        </div>
+        <div id="infos">
+            <div id="form_1">
+                <fieldset>
+                    <legend>Transaction</legend>
+                    <label for="dateTransaction">Date Transaction</label> <input type="date" name="" id="dateTransaction" placeholder="Transaction Date">
+                    <label for="">Transaction Object</label> <input type="text" name="" id="description" placeholder="Transaction Object">
+                    <label for="">Identifiant Client</label> <input type="text" name="" id="client" placeholder="Identifiant du client"><br><br>
+                    <label for="">code</label> <input type="number" name="" id="codeClient" placeholder="code">
+                    <label for="">Debit</label> <input type="number" name="" id="debitClient" placeholder="Montant debit">
+                    <label for="">Credit</label> <input type="number" name="" id="creditClient" placeholder="Montant credit"><br><br>
+                    <label for="">code</label> <input type="number" name="" id="codeClient_1" placeholder="code">
+                    <label for="">Debit</label> <input type="number" name="" id="debitClient_1" placeholder="Montant debit">
+                    <label for="">Credit</label> <input type="number" name="" id="creditClient_1" placeholder="Montant credit"><br><br>
+                    <button type="submit" id="ajt">Ajouter</button>
+                </fieldset>
+            </div><br><br>
+            
+            <table>
+                <caption><span>"coder un jour, coder toujours"</span></caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Transaction Date</th>
+                        <th scope="col">Account Code(Debit)</th>
+                        <th scope="col">Account Code(Credit)</th>
+                        <th scope="col">Identifiant Client</th> 
+                        <th scope="col">Transaction Object</th>
+                        <th scope="col">Debit</th>
+                        <th scope="col">Credit</th>
+                    </tr>
+                </thead>
+                <tbody id="contenuBody">
+                    <!-- <tr>
+                        <td>01/11/2021</td>
+                        <td>410000</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>Vente</td>
+                        <td>1500</td>
+                        <td></td>
+                    </tr> -->
+                    
+                </tbody>
+        </table>
+        </div>
+    </main>
+    
+    <script>
+        let todoList = [];
+    
+        let inserer = document.getElementById("ajt");
+        let deleted = document.getElementById("deleted");
+        
+        function avant_down() {
+            let dte = document.getElementById('dateTransaction').value;
+            let desc = document.getElementById('description').value;
+            let client = document.getElementById("client").value;
+            let codeClt = document.getElementById('codeClient').value;
+            let creClt = document.getElementById('creditClient').value;
+            let codeClt_1 = document.getElementById('codeClient_1').value;
+            let creClt_1 = document.getElementById('creditClient_1').value;
+            todoList.push([dte, desc, client, codeClt, creClt, codeClt_1,creClt_1]);
+            addToLocalStorage(todoList);
+            }
+        
+            function down() {
+                    str = "";
+                    todoList.forEach((element, index) => {
+                        str =
+                        str +
+                        `<tr>
+                            <th scope="row">${index + 1}</th>
+                            <td>${element[0]}</td>
+                            <td>${element[1]}</td>
+                            <td>${element[2]}</td>
+                            <td>${element[3]}</td>
+                            <td>${element[4]}</td>
+                            <td>${element[5]}</td>
+                            <td><button type="submit" class="btn btn-primary btn-sm " onclick="deleted(${index})" >OUI</button></td>
+                        </tr>`;
+                    });
+                    document.getElementById("contenuBody").innerHTML = str;
+                    }
+            
+                    function addToLocalStorage(todoList) {
+                    localStorage.setItem("todoList", JSON.stringify(todoList));
+                        down(todoList);
+                    }
+                    
+            
+                        function getFromLocalStorage() {
+                            const reference = localStorage.getItem("todoList");
+                            if (reference) {
+                                todoList = JSON.parse(reference);
+                                addToLocalStorage(todoList);
+                            }
+                            }
+                        
+            
+            function deleteTodo(id) {
+            todoList = todoList.filter(function (item) {
+                return item.id != id;
+            });
+            
+            addToLocalStorage(todoList);
+            }
+            getFromLocalStorage();
+            
+            function deleted(item_index) {
+            todoList.splice(item_index, 1);
+            
+            addToLocalStorage(todoList);
+            }
+            
+            inserer.addEventListener("click", () => {
+                avant_down(todoList);
+                });
+    
+    
+    </script>
+    
+</body>
+</html>
